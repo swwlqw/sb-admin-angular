@@ -102,10 +102,6 @@ angular
                 templateUrl: 'views/pages/blank.html',
                 url: '/blank'
             })
-            .state('login', {
-                templateUrl: 'views/pages/login.html',
-                url: '/login'
-            })
             .state('dashboard.chart', {
                 templateUrl: 'views/chart.html',
                 url: '/chart',
@@ -153,6 +149,25 @@ angular
             .state('dashboard.grid', {
                 templateUrl: 'views/ui-elements/grid.html',
                 url: '/grid'
+            })
+            .state('login', {
+                templateUrl: 'views/pages/login.html',
+                url: '/login',
+                controller: 'loginController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/loginController.js'
+                            ]
+                        })
+                    }
+                }
+            }).state('regist', {
+                templateUrl: 'views/pages/rigist',
+                url: 'regist',
+                controller: 'registController'
             })
     }]);
 
