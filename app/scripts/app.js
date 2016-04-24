@@ -178,16 +178,16 @@ angular
                         })
                     }
                 }
-            }).state('overview', {
-                templateUrl: 'views/pages/overview.html',
-                url: '/overview',
-                controller: 'overviewController',
+            }).state('home', {
+                templateUrl: 'views/pages/home.html',
+                url: '/home',
+                controller: 'homeController',
                 resolve: {
                     loadMyFiles: function ($ocLazyLoad) {
                         return $ocLazyLoad.load({
                             name: 'sbAdminApp',
                             files: [
-                                'scripts/controllers/overviewController.js'
+                                'scripts/controllers/homeController.js'
                             ]
                         })
                     },
@@ -196,8 +196,7 @@ angular
                             {
                                 name: 'sbAdminApp',
                                 files: [
-                                    'scripts/directives/header/header.js',
-                                    'scripts/directives/header/header-notification/header-notification.js',
+                                    'scripts/directives/header/my_header.js',
                                     'scripts/directives/sidebar/my_sidebar.js'
                                 ]
                             }),
