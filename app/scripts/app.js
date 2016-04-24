@@ -164,7 +164,8 @@ angular
                         });
                     }
                 }
-            }).state('regist', {
+            })
+            .state('regist', {
                 templateUrl: 'views/pages/regist.html',
                 url: '/regist',
                 controller: 'registController',
@@ -178,7 +179,8 @@ angular
                         })
                     }
                 }
-            }).state('home', {
+            })
+            .state('home', {
                 templateUrl: 'views/pages/home.html',
                 url: '/home',
                 controller: 'homeController',
@@ -232,6 +234,21 @@ angular
                                     name: 'ngTouch',
                                     files: ['bower_components/angular-touch/angular-touch.js']
                                 });
+                    }
+                }
+            })
+            .state('home.apps', {
+                templateUrl: 'views/pages/apps.html',
+                url: '/apps',
+                resolve: {
+                    loadMyDirectives: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load(
+                            {
+                                name: 'sbAdminApp',
+                                files: [
+                                    'scripts/directives/sidebar/my_sidebar.js'
+                                ]
+                            });
                     }
                 }
             })
