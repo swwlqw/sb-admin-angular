@@ -14,7 +14,9 @@ angular.module('sbAdminApp')
             replace: true,
             controller: function ($scope, $http) {
                 $http.get('api/user/nickname').success(function (result){
-                    $scope.nickname = result.data;
+                    if (result.success) {
+                        $scope.nickname = result.data;
+                    }
                 })
             }
         }
