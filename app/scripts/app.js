@@ -198,8 +198,6 @@ angular
                                 files: [
                                     'scripts/directives/header/header.js',
                                     'scripts/directives/header/header-notification/header-notification.js',
-                                    'scripts/directives/sidebar/sidebar.js',
-                                    'scripts/directives/sidebar/sidebar-search/sidebar-search.js',
                                     'scripts/directives/sidebar/my_sidebar.js'
                                 ]
                             }),
