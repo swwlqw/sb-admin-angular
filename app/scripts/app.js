@@ -21,7 +21,7 @@ angular
             events: true,
         });
 
-        $urlRouterProvider.otherwise('/dashboard/home');
+   //     $urlRouterProvider.otherwise('/dashboard/home');
 
         $stateProvider
             .state('dashboard', {
@@ -165,9 +165,19 @@ angular
                     }
                 }
             }).state('regist', {
-                templateUrl: 'views/pages/rigist',
-                url: 'regist',
-                controller: 'registController'
+                templateUrl: 'views/pages/regist.html',
+                url: '/regist',
+                controller: 'registController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/registController.js'
+                            ]
+                        })
+                    }
+                }
             })
     }]);
 
