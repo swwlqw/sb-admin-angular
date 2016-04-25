@@ -243,16 +243,15 @@ angular
             .state('home.apps', {
                 templateUrl: 'views/pages/apps.html',
                 url: '/apps',
-
+                controller:'appsController',
                 resolve: {
-                    loadMyDirectives: function ($ocLazyLoad) {
-                        return $ocLazyLoad.load(
-                            {
-                                name: 'sbAdminApp',
-                                files: [
-                                    'scripts/directives/sidebar/my_sidebar.js'
-                                ]
-                            });
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/AppsController.js'
+                            ]
+                        })
                     }
                 }
             })

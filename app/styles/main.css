@@ -81,3 +81,7 @@ body {
 text-decoration: none;
 background-color: #eee;
 }
+
+.margin-left-1 {
+  margin-left: 10px;
+}
