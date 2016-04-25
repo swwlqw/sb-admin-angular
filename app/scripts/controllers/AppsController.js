@@ -6,8 +6,8 @@ angular.module('sbAdminApp')
                 number: 1,
                 icon: 'fa-wrench',
                 subs: [
-                    {url: '/home/apps/list', name: 'APP列表'},
-                    {url: '/home/apps/grants', name: '授权管理'}
+                    {url: 'home.apps.list', name: 'APP列表'},
+                    {url: 'home.apps.grants', name: '授权管理'}
                 ]
             }
         ];

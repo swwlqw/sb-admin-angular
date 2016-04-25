@@ -255,6 +255,21 @@ angular
                     }
                 }
             })
+            .state('home.apps.list',{
+                templateUrl: 'views/pages/apps-list.html',
+                url:'/list',
+                controller:'AppsListController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/AppsListController.js'
+                            ]
+                        })
+                    }
+                }
+            })
     }]);
 
     
