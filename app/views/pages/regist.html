@@ -15,22 +15,22 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="用户名" name="username" type="text"  ng-bind="data.username" autofocus>
+                                <input class="form-control" placeholder="用户名" name="username" type="text"  ng-model="data.username" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="密码" name="password" type="password" ng-bind="data.password">
+                                <input class="form-control" placeholder="密码" name="password" type="password" ng-model="data.password">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="重复密码" name="confirm" type="password" ng-bind="data.confirm">
+                                <input class="form-control" placeholder="重复密码" name="confirm" type="password" ng-model="data.confirm">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="昵称" name="nickname" type="text"  ng-bind="data.nickname">
+                                <input class="form-control" placeholder="昵称" name="nickname" type="text"  ng-model="data.nickname">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="邮箱" name="email" type="email" ng-bind="data.email">
+                                <input class="form-control" placeholder="邮箱" name="email" type="email" ng-model="data.email">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="电话" name="nickname" type="text" ng-bind="data.mobile">
+                                <input class="form-control" placeholder="电话" name="nickname" type="text" ng-model="data.mobile">
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
                             <botton  class="btn btn-lg btn-success btn-block" ng-click="regist()">注册</botton>

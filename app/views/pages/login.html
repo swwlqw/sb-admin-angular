@@ -1,3 +1,4 @@
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
@@ -15,10 +16,10 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="用户名" name="username"  ng-bind="data.username" autofocus>
+                                <input class="form-control" placeholder="用户名"  ng-model="data.username" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="密码" name="password" type="password" ng-bind="data.password">
+                                <input class="form-control" placeholder="密码" type="password" ng-model="data.password">
                             </div>
                             <div class="checkbox">
                                 <label>
@@ -32,9 +33,18 @@
                 </div>
             </div>
 
-            <div>
-                <p ng-show="result.error" class="text-danger">登录失败！</p>
-            </div>
         </div>
     </div>
 </div>
+
+<script type="text/ng-template" id="loginModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title" ng-bind="modal.title"></h3>
+    </div>
+    <div class="modal-body">
+        <p ng-bind="modal.content"></p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="close()" ng-bind="modal.confirm"></button>
+    </div>
+</script>
