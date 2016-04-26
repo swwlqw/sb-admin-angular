@@ -345,6 +345,21 @@ angular
                     }
                 }
             })
+            .state('home.console.location',{
+                templateUrl: 'views/pages/location.html',
+                url: '/location/{id}',
+                controller:'LocationController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/LocationController.js'
+                            ]
+                        })
+                    }
+                }
+            })
     }]);
 
     

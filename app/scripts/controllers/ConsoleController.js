@@ -68,12 +68,12 @@ angular.module('sbAdminApp')
 
             $rootScope.data.pages.forEach(function (page) {
                     var p1 = {
-                        url: 'console.location.' + page.id,
+                        url: 'home.console.location({id:' + page.id+'})',
                         name: page.name
                     };
                     subs1.push(p1);
                     var p2 = {
-                        url: 'console.chart.' + page.id,
+                        url: 'home.console.chart.' + page.id,
                         name: page.name
                     };
                     subs2.push(p2);

@@ -26,7 +26,6 @@ angular.module('sbAdminApp')
             $scope.collapseVar = 0;
           else
             $scope.collapseVar = x;
-          console.log($scope.collapseVar);
         };
 
         $scope.multiCheck = function(y){
