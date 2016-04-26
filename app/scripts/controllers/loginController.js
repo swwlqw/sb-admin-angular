@@ -6,7 +6,7 @@ angular.module('sbAdminApp')
         };
         $scope.login = function () {
             if ($scope.data.username === 'swwlqw' || $scope.data.username === 'liquanwei') {
-                $location.path('home');
+                $location.path('home/apps/list');
             } else {
                 $modal.open({
                     animation: true,
