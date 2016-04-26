@@ -315,6 +315,21 @@ angular
                     }
                 }
             })
+            .state('home.console.page', {
+                templateUrl: 'views/pages/page.html',
+                url: '/page',
+                controller:'PageController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/PageController.js'
+                            ]
+                        })
+                    }
+                }
+            })
     }]);
 
     

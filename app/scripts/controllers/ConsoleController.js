@@ -3,14 +3,14 @@ angular.module('sbAdminApp')
       //  $scope.$parent.app = $rootScope.currentApp.name;
         $scope.$parent.app = 'test';
 
-        $rootScope.pageIndex = 3;
-        $rootScope.pages = [
+        $rootScope.data.pageIndex = 3;
+        $rootScope.data.pages = [
             {
-                id: 'page1',
+                id: '1',
                 name: '页面1'
             },
             {
-                id: 'page2',
+                id: '2',
                 name: '页面2'
             }
         ];
@@ -40,13 +40,13 @@ angular.module('sbAdminApp')
             }
         ];
 
-        function reloadLists() {
+        $rootScope.reloadLists = function() {
             var subs1 = $scope.lists[1].subs;
             var subs2 = $scope.lists[2].subs;
             subs1.splice(0, subs1.length);
             subs2.splice(0, subs2.length);
 
-            $rootScope.pages.forEach(function (page) {
+            $rootScope.data.pages.forEach(function (page) {
                     var p1 = {
                         url: 'console.location.' + page.id,
                         name: page.name
@@ -59,13 +59,10 @@ angular.module('sbAdminApp')
                     subs2.push(p2);
                 }
             );
-        }
+        };
 
-        reloadLists();
+        $rootScope.reloadLists();
 
-        $scope.$watch(JSON.stringify($rootScope.pages), function () {
-            reloadLists();
-        });
 
         $scope.check = function (x) {
             if (x == $scope.collapseVar)
