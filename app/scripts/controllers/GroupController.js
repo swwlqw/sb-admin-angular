@@ -35,25 +35,7 @@ angular.module('sbAdminApp')
             }
         }
 
-    })
-    .controller('GroupAddController', function ($scope, $modalInstance, $rootScope) {
-        $scope.ok = function () {
-            var index = $rootScope.data.groupIndex;
-            $rootScope.data.groupIndex = index + 1;
-            var app = {
-                id: index,
-                name: $scope.data.name,
-                description: $scope.data.description,
-                subs: []
-            };
-            $rootScope.data.groups.push(app);
-            $modalInstance.close($modalInstance.opened);
-        };
-        $scope.close = function () {
-            $modalInstance.close($modalInstance.opened);
-        };
-    })
-    .controller('GroupDetailController', function ($scope, $modalInstance, $rootScope) {
+    }) .controller('GroupDetailController', function ($scope, $modalInstance, $rootScope) {
         $scope.data = $rootScope.detailGroup;
         $scope.ok = function () {
             $modalInstance.close($modalInstance.opened);

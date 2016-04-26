@@ -1,13 +1,96 @@
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header">添加数据组</h1>
-		</div>
-
-		<div>
-			Context goes here!
-		</div>
-		<!-- /.col-lg-12 -->
-	</div>
-	<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">添加数据组</h1>
+    </div>
+    <!-- /.col-lg-12 -->
 </div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <span>基本信息</span>
+            </div>
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover">
+                        <tbody>
+                        <tr class="odd gradeX">
+                            <td>名称</td>
+                            <td><input class="form-control" ng-model="data.name"></td>
+                        </tr>
+                        <tr class="odd gradeX">
+                            <td>描述</td>
+                            <td><input class="form-control" ng-model="data.description"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <span>列详情</span>
+                <button class="pull-right btn-success" ng-click="add()">添加列</button>
+            </div>
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>列名</th>
+                            <th>类型</th>
+                            <th>备注</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="odd gradeX" ng-repeat="item in data.subs">
+                            <td ng-bind="item.name"></td>
+                            <td ng-bind="item.type"></td>
+                            <td ng-bind="item.remark"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary" ng-click="addGroup()">确定</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="ColumnAdd.html">
+    <div class="modal-header">
+        <h3 class="modal-title">添加列</h3>
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <fieldset>
+                <div class="form-group ">
+                    <label>列名：</label>
+                    <input class="form-control" placeholder="列名称" ng-model="data.name" autofocus>
+                </div>
+                <div class="form-group">
+                    <label>列类型：</label>
+                    <select class="form-control" ng-model="data.type" placeholder="请选择类型">
+                        <option value ="字符串">字符串</option>
+                        <option value ="整数">整数</option>
+                        <option value ="枚举">枚举</option>
+                        <option value ="时间">时间</option>
+                    </select>
+                </div>
+                <div class="form-group ">
+                    <label>备注：</label>
+                    <input class="form-control" placeholder="备注" ng-model="data.remark" autofocus>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">确定</button>
+        <button class="btn btn-default" type="button" ng-click="close()">取消</button>
+    </div>
+</script>
