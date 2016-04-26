@@ -10,31 +10,31 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <span>有权限的APP列表</span>
-                <button class="pull-right btn-success">添加</button>
+                <button class="pull-right btn-success" ng-click="add()">添加</button>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <div class="dataTable_wrapper">
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
-                            <tr>
-                                <th>名称</th>
-                                <th>权限</th>
-                                <th>描述</th>
-                                <th>详情</th>
-                                <th>管理</th>
-                                <th>操作</th>
-                            </tr>
+                        <tr>
+                            <th>名称</th>
+                            <th>权限</th>
+                            <th>描述</th>
+                            <th>详情</th>
+                            <th>管理</th>
+                            <th>操作</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr class="odd gradeX" ng-repeat="app in apps">
-                                <td ng-bind="app.name"></td>
-                                <td ng-bind="app.grant"></td>
-                                <td ng-bind="app.description"></td>
-                                <td><a ng-click="detail(app.id)">详情</a></td>
-                                <td><a ng-click="manager(app.id)">管理</a></td>
-                                <td><a ng-click="delete(app.id)">删除</a></td>
-                            </tr>
+                        <tr class="odd gradeX" ng-repeat="app in apps">
+                            <td ng-bind="app.name"></td>
+                            <td ng-bind="app.grant"></td>
+                            <td ng-bind="app.description"></td>
+                            <td><a ng-click="detail(app)">详情</a></td>
+                            <td><a ng-click="manager(app)">管理</a></td>
+                            <td><a ng-click="delete(app)">删除</a></td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -42,3 +42,58 @@
         </div>
     </div>
 </div>
+
+<script type="text/ng-template" id="AppListAdd.html">
+    <div class="modal-header">
+        <h3 class="modal-title">创建APP</h3>
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <fieldset>
+                <div class="form-group ">
+                    <label>APP名称：</label>
+                    <input class="form-control" placeholder="APP名称" ng-model="data.name" autofocus>
+                </div>
+                <div class="form-group">
+                    <label>APP描述：</label>
+                    <input class="form-control" placeholder="APP描述" ng-model="data.description">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">确定</button>
+        <button class="btn btn-default" type="button" ng-click="close()">取消</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AppListDetail.html">
+    <div class="modal-header">
+        <h3 class="modal-title">APP详情</h3>
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <fieldset>
+                <div class="form-group ">
+                    <label>APP名称：</label>
+                    <label class="form-control" ng-bind="data.name" >
+                </div>
+                <div class="form-group">
+                    <label>APP描述：</label>
+                    <label class="form-control"  ng-bind="data.description" >
+                </div>
+                <div class="form-group ">
+                    <label>AppKey：</label>
+                    <label class="form-control"  ng-bind="data.appKey" >
+                </div>
+                <div class="form-group">
+                    <label>AppSecret：</label>
+                    <label class="form-control"  ng-bind="data.appSecret" >
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ok()">确定</button>
+    </div>
+</script>

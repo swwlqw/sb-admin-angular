@@ -270,6 +270,21 @@ angular
                     }
                 }
             })
+            .state('home.console', {
+                templateUrl: 'views/pages/apps.html',
+                url: '/console',
+                controller:'ConsoleController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/ConsoleController.js'
+                            ]
+                        })
+                    }
+                }
+            })
     }]);
 
     
