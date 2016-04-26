@@ -1,5 +1,7 @@
 angular.module('sbAdminApp')
     .controller('ConsoleController', function ($scope, $rootScope, $location) {
+        $scope.$parent.app = $rootScope.currentApp.name;
+
         $rootScope.pageIndex = 3;
         $rootScope.pages = [
             {
@@ -38,8 +40,8 @@ angular.module('sbAdminApp')
         ];
 
         function reloadLists() {
-            var subs1 =  $scope.lists[1].subs;
-            var subs2 =  $scope.lists[2].subs;
+            var subs1 = $scope.lists[1].subs;
+            var subs2 = $scope.lists[2].subs;
             subs1.splice(0, subs1.length);
             subs2.splice(0, subs2.length);
 

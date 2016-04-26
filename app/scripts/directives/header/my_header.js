@@ -12,6 +12,9 @@ angular.module('sbAdminApp')
             templateUrl: 'scripts/directives/header/my_header.html',
             restrict: 'E',
             replace: true,
+            scope: {
+                app:'='
+            },
             controller: function ($scope) {
 				$scope.nickname ="swwlqw";
             }

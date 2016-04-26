@@ -23,6 +23,7 @@ angular.module('sbAdminApp')
         };
 
         $scope.manager = function (item) {
+            $rootScope.currentApp = item;
             $location.path("home/console")
         };
 

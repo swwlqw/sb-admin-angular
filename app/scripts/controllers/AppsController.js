@@ -1,10 +1,12 @@
 angular.module('sbAdminApp')
     .controller('appsController', function ($scope, $http, $location) {
+        $scope.$parent.app ='';
+
         $scope.lists = [
             {
                 name: ' APP管理',
                 number: 1,
-                icon: 'fa-wrench',
+                icon: 'fa-android',
                 subs: [
                     {url: 'home.apps.list', name: 'APP列表'},
                     {url: 'home.apps.grants', name: '授权管理'}
