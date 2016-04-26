@@ -285,6 +285,36 @@ angular
                     }
                 }
             })
+            .state('home.console.group', {
+                templateUrl: 'views/pages/group.html',
+                url: '/group',
+                controller:'GroupController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/GroupController.js'
+                            ]
+                        })
+                    }
+                }
+            })
+            .state('home.console.group-add', {
+                templateUrl: 'views/pages/group-add.html',
+                url: '/group-add',
+                controller:'GroupAddController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/GroupAddController.js'
+                            ]
+                        })
+                    }
+                }
+            })
     }]);
 
     

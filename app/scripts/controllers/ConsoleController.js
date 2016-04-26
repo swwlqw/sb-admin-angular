@@ -1,6 +1,7 @@
 angular.module('sbAdminApp')
     .controller('ConsoleController', function ($scope, $rootScope, $location) {
-        $scope.$parent.app = $rootScope.currentApp.name;
+      //  $scope.$parent.app = $rootScope.currentApp.name;
+        $scope.$parent.app = 'test';
 
         $rootScope.pageIndex = 3;
         $rootScope.pages = [
@@ -20,19 +21,19 @@ angular.module('sbAdminApp')
                 number: 1,
                 icon: 'fa-wrench',
                 subs: [
-                    {url: 'home.console.data', name: '数据组管理'},
+                    {url: 'home.console.group', name: '数据组管理'},
                     {url: 'home.console.page', name: '页面管理'},
                     {url: 'home.console.report', name: '报表管理'}
                 ]
             },
             {
-                name: '页面报表配置',
+                name: ' 页面报表配置',
                 number: 2,
                 icon: 'fa-location-arrow',
                 subs: []
             },
             {
-                name: '报表查看',
+                name: ' 报表查看',
                 number: 3,
                 icon: 'fa-bar-chart-o',
                 subs: []

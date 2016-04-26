@@ -29,6 +29,33 @@ angular.module('sbAdminApp')
                     appSecret:$rootScope.generate(20),
                     description: '描述2'
                 }
+            ],
+            groupIndex: 3,
+            groups: [
+                {
+                    id: 1,
+                    name:'number',
+                    description:'活跃用户',
+                    length: 2,
+                    subs: [
+                        {name:'sireal', type:'字符串'},
+                        {name:'time', type:'时间'}
+                    ]
+                },
+                {
+                    id: 2,
+                    name:'job',
+                    description:'职业',
+                    length: 1,
+                    subs: [
+                        {
+                            name:'job',
+                            type:'枚举',
+                            remark:'工人,教师,医生,学生,农民'
+                        }
+                    ]
+                }
+
             ]
         };
 
