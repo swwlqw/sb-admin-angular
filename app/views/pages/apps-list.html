@@ -9,7 +9,8 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                有权限的APP列表
+                <span>有权限的APP列表</span>
+                <button class="pull-right btn-success">添加</button>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -17,18 +18,22 @@
                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                         <thead>
                             <tr>
-                                <th>APP</th>
+                                <th>名称</th>
+                                <th>权限</th>
                                 <th>描述</th>
                                 <th>详情</th>
                                 <th>管理</th>
+                                <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="odd gradeX" ng-repeat="app in apps">
                                 <td ng-bind="app.name"></td>
+                                <td ng-bind="app.grant"></td>
                                 <td ng-bind="app.description"></td>
-                                <td></td>
-                                <td></td>
+                                <td><a ng-click="detail(app.id)">详情</a></td>
+                                <td><a ng-click="manager(app.id)">管理</a></td>
+                                <td><a ng-click="delete(app.id)">删除</a></td>
                             </tr>
                         </tbody>
                     </table>
