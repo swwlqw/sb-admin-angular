@@ -33,7 +33,18 @@ angular.module('sbAdminApp')
 
 
         $rootScope.data.locations =[
-
+            [],
+            [
+                {
+                    name:'chart1',
+                },
+                {
+                    name:'chart2',
+                }
+            ],
+            [],
+            [],
+            []
         ];
         $scope.lists = [
             {
@@ -73,7 +84,7 @@ angular.module('sbAdminApp')
                     };
                     subs1.push(p1);
                     var p2 = {
-                        url: 'home.console.chart.' + page.id,
+                        url: 'home.console.result({id:' + page.id+'})',
                         name: page.name
                     };
                     subs2.push(p2);

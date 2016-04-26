@@ -360,6 +360,21 @@ angular
                     }
                 }
             })
+            .state('home.console.chart',{
+                templateUrl: 'views/pages/result.html',
+                url: '/result/{id}',
+                controller:'ResultController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/ResultController.js'
+                            ]
+                        })
+                    }
+                }
+            })
     }]);
 
     

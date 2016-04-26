@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-    .controller('LocationController', function ($scope, $modal, $rootScope, $stateParams) {
+    .controller('ResultController', function ($scope, $modal, $rootScope, $stateParams) {
         var id = $stateParams.id;
         $scope.data = $rootScope.data.locations[id];
         $scope.all = $rootScope.data.reports;
