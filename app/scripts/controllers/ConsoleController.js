@@ -15,6 +15,26 @@ angular.module('sbAdminApp')
             }
         ];
 
+        $rootScope.data.reportIndex = 3;
+        $rootScope.data.reports = [
+            {
+                id: '1',
+                name: 'chart1',
+                type:'line',
+                group:'group1'
+            },
+            {
+                id: '2',
+                name: 'chart2',
+                type:'pie',
+                group:'group2'
+            }
+        ];
+
+
+        $rootScope.data.locations =[
+
+        ];
         $scope.lists = [
             {
                 name: ' 基础配置',

@@ -330,6 +330,21 @@ angular
                     }
                 }
             })
+            .state('home.console.report', {
+                templateUrl: 'views/pages/report.html',
+                url: '/page',
+                controller:'ReportController',
+                resolve: {
+                    loadMyFiles: function ($ocLazyLoad) {
+                        return $ocLazyLoad.load({
+                            name: 'sbAdminApp',
+                            files: [
+                                'scripts/controllers/ReportController.js'
+                            ]
+                        })
+                    }
+                }
+            })
     }]);
 
     
