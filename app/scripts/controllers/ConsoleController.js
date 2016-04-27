@@ -119,55 +119,72 @@ angular.module('sbAdminApp')
             chart3:{
                 title:'地图测试',
                 option:{
-                    series: [
+                    title : {
+                        text: '网络延迟',
+                        x:'center'
+                    },
+                    tooltip : {
+                        trigger: 'item'
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        x:'left',
+                        data:['时间（ms）']
+                    },
+                    dataRange: {
+                        min: 0,
+                        max: 2500,
+                        x: 'left',
+                        y: 'bottom',
+                        text:['高','低'],
+                        calculable : true
+                    },
+
+                    series : [
                         {
-                            name: 'iphone3',
+                            name: '时间（ms）',
                             type: 'map',
                             mapType: 'china',
                             roam: false,
-                            label: {
-                                normal: {
-                                    show: true
-                                },
-                                emphasis: {
-                                    show: true
-                                }
+                            itemStyle:{
+                                normal:{label:{show:true}},
+                                emphasis:{label:{show:true}}
                             },
                             data:[
-                                {name: '北京',value: randomData() },
-                                {name: '天津',value: randomData() },
-                                {name: '上海',value: randomData() },
-                                {name: '重庆',value: randomData() },
-                                {name: '河北',value: randomData() },
-                                {name: '河南',value: randomData() },
-                                {name: '云南',value: randomData() },
-                                {name: '辽宁',value: randomData() },
-                                {name: '黑龙江',value: randomData() },
-                                {name: '湖南',value: randomData() },
-                                {name: '安徽',value: randomData() },
-                                {name: '山东',value: randomData() },
-                                {name: '新疆',value: randomData() },
-                                {name: '江苏',value: randomData() },
-                                {name: '浙江',value: randomData() },
-                                {name: '江西',value: randomData() },
-                                {name: '湖北',value: randomData() },
-                                {name: '广西',value: randomData() },
-                                {name: '甘肃',value: randomData() },
-                                {name: '山西',value: randomData() },
-                                {name: '内蒙古',value: randomData() },
-                                {name: '陕西',value: randomData() },
-                                {name: '吉林',value: randomData() },
-                                {name: '福建',value: randomData() },
-                                {name: '贵州',value: randomData() },
-                                {name: '广东',value: randomData() },
-                                {name: '青海',value: randomData() },
-                                {name: '西藏',value: randomData() },
-                                {name: '四川',value: randomData() },
-                                {name: '宁夏',value: randomData() },
-                                {name: '海南',value: randomData() },
-                                {name: '台湾',value: randomData() },
-                                {name: '香港',value: randomData() },
-                                {name: '澳门',value: randomData() }
+                                {name: '北京',value: Math.round(Math.random()*1000)},
+                                {name: '天津',value: Math.round(Math.random()*1000)},
+                                {name: '上海',value: Math.round(Math.random()*1000)},
+                                {name: '重庆',value: Math.round(Math.random()*1000)},
+                                {name: '河北',value: Math.round(Math.random()*1000)},
+                                {name: '河南',value: Math.round(Math.random()*1000)},
+                                {name: '云南',value: Math.round(Math.random()*1000)},
+                                {name: '辽宁',value: Math.round(Math.random()*1000)},
+                                {name: '黑龙江',value: Math.round(Math.random()*1000)},
+                                {name: '湖南',value: Math.round(Math.random()*1000)},
+                                {name: '安徽',value: Math.round(Math.random()*1000)},
+                                {name: '山东',value: Math.round(Math.random()*1000)},
+                                {name: '新疆',value: Math.round(Math.random()*1000)},
+                                {name: '江苏',value: Math.round(Math.random()*1000)},
+                                {name: '浙江',value: Math.round(Math.random()*1000)},
+                                {name: '江西',value: Math.round(Math.random()*1000)},
+                                {name: '湖北',value: Math.round(Math.random()*1000)},
+                                {name: '广西',value: Math.round(Math.random()*1000)},
+                                {name: '甘肃',value: Math.round(Math.random()*1000)},
+                                {name: '山西',value: Math.round(Math.random()*1000)},
+                                {name: '内蒙古',value: Math.round(Math.random()*1000)},
+                                {name: '陕西',value: Math.round(Math.random()*1000)},
+                                {name: '吉林',value: Math.round(Math.random()*1000)},
+                                {name: '福建',value: Math.round(Math.random()*1000)},
+                                {name: '贵州',value: Math.round(Math.random()*1000)},
+                                {name: '广东',value: Math.round(Math.random()*1000)},
+                                {name: '青海',value: Math.round(Math.random()*1000)},
+                                {name: '西藏',value: Math.round(Math.random()*1000)},
+                                {name: '四川',value: Math.round(Math.random()*1000)},
+                                {name: '宁夏',value: Math.round(Math.random()*1000)},
+                                {name: '海南',value: Math.round(Math.random()*1000)},
+                                {name: '台湾',value: Math.round(Math.random()*1000)},
+                                {name: '香港',value: Math.round(Math.random()*1000)},
+                                {name: '澳门',value: Math.round(Math.random()*1000)}
                             ]
                         }
                     ]
