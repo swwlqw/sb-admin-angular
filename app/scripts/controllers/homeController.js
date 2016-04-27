@@ -19,7 +19,7 @@ angular.module('sbAdminApp')
                     name: 'APP1',
                     appKey: $rootScope.generate(10),
                     appSecret: $rootScope.generate(20),
-                    description: '描述1'
+                    description: '测试用的APP'
                 },
                 {
                     id: 2,
@@ -27,15 +27,15 @@ angular.module('sbAdminApp')
                     name: 'APP2',
                     appKey:$rootScope.generate(10),
                     appSecret:$rootScope.generate(20),
-                    description: '描述2'
+                    description: '第二个APP的描述信息'
                 }
             ],
-            groupIndex: 3,
+            groupIndex: 5,
             groups: [
                 {
                     id: 1,
-                    name:'number',
-                    description:'活跃用户',
+                    name:'group1',
+                    description:'测试数据组1',
                     length: 2,
                     subs: [
                         {name:'sireal', type:'字符串'},
@@ -44,8 +44,8 @@ angular.module('sbAdminApp')
                 },
                 {
                     id: 2,
-                    name:'job',
-                    description:'职业',
+                    name:'group2',
+                    description:'测试数据组2',
                     length: 1,
                     subs: [
                         {
@@ -54,8 +54,29 @@ angular.module('sbAdminApp')
                             remark:'工人,教师,医生,学生,农民'
                         }
                     ]
+                },
+                {
+                    id: 3,
+                    name:'group3',
+                    description:'测试数据组3',
+                    length: 2,
+                    subs: [
+                        {name:'province', type:'枚举'},
+                        {name:'value', type:'数字'}
+                    ]
+                },
+                {
+                    id: 4,
+                    name:'group4',
+                    description:'测试数据组4',
+                    length: 4,
+                    subs: [
+                        {name:'data1', type:'数字'},
+                        {name:'data2', type:'数字'},
+                        {name:'count', type:'数字'},
+                        {name:'time', type:'时间'}
+                    ]
                 }
-
             ]
         };
 

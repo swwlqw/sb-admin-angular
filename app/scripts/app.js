@@ -201,7 +201,8 @@ angular
                                     'scripts/directives/header/my_header.js',
                                     'scripts/directives/header/header-notification/header-notification.js',
                                     'scripts/directives/sidebar/my_sidebar.js',
-                                    'scripts/directives/sidebar/sidebar-search/sidebar-search.js'
+                                    'scripts/directives/sidebar/sidebar-search/sidebar-search.js',
+                                    'scripts/directives/echarts/my_chart.js'
                                 ]
                             }),
                             $ocLazyLoad.load(
@@ -360,7 +361,7 @@ angular
                     }
                 }
             })
-            .state('home.console.chart',{
+            .state('home.console.result',{
                 templateUrl: 'views/pages/result.html',
                 url: '/result/{id}',
                 controller:'ResultController',
@@ -369,7 +370,7 @@ angular
                         return $ocLazyLoad.load({
                             name: 'sbAdminApp',
                             files: [
-                                'scripts/controllers/ResultController.js'
+                                'scripts/controllers/ResultController.js',
                             ]
                         })
                     }

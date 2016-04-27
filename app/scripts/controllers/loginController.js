@@ -12,7 +12,8 @@ angular.module('sbAdminApp')
                     animation: true,
                     templateUrl: 'loginModalContent.html',
                     controller: 'LoginModalController',
-                    backdrop: true
+                    backdrop: true,
+                    size:'sm'
                 });
             }
         }

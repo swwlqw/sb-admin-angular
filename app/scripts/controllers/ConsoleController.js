@@ -1,7 +1,10 @@
 angular.module('sbAdminApp')
     .controller('ConsoleController', function ($scope, $rootScope, $location) {
-      //  $scope.$parent.app = $rootScope.currentApp.name;
-        $scope.$parent.app = 'test';
+        if ($rootScope.currentApp) {
+            $scope.$parent.app = $rootScope.currentApp.name;
+        }else{
+            $scope.$parent.app = 'Test';
+        }
 
         $rootScope.data.pageIndex = 3;
         $rootScope.data.pages = [
@@ -15,33 +18,169 @@ angular.module('sbAdminApp')
             }
         ];
 
-        $rootScope.data.reportIndex = 3;
+        $rootScope.data.reportIndex = 5;
         $rootScope.data.reports = [
             {
                 id: '1',
                 name: 'chart1',
                 type:'line',
-                group:'group1'
+                group:'group1',
+                title:'折线图测试'
             },
             {
                 id: '2',
                 name: 'chart2',
                 type:'pie',
-                group:'group2'
+                group:'group2',
+                title:'饼图测试'
+            },
+            {
+                id: '3',
+                name: 'chart3',
+                type:'map',
+                group:'group3',
+                title:'地图测试'
+            },
+            {
+                id: '4',
+                name: 'table1',
+                type:'table',
+                group:'group4',
+                title:'表格测试'
             }
         ];
 
+        function randomData() {
+            return Math.round(Math.random()*1000);
+        }
+
+        $rootScope.data.options ={
+            chart1: {
+                title: '折线图测试',
+                option:{
+                    tooltip: {},
+                    legend: {
+                        data:['活跃用户']
+                    },
+                    xAxis: {
+                        data: ["04/20","04/21","04/22","04/23","04/24","04/25"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '活跃用户',
+                        type: 'line',
+                        data: [5, 20, 36, 10, 10, 20]
+                    }]
+                }
+            },
+            chart2:{
+                title:'饼图测试',
+                option:{
+                    title: {
+                        text: '职业分布',
+                        left: 'center',
+                        top: 20,
+                        textStyle: {
+                            color: '#ccc'
+                        }
+                    },
+
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+
+                    visualMap: {
+                        show: false,
+                        min: 80,
+                        max: 600,
+                        inRange: {
+                            colorLightness: [0, 1]
+                        }
+                    },
+                    series : [
+                        {
+                            name:'人数',
+                            type:'pie',
+                            radius : '55%',
+                            center: ['50%', '50%'],
+                            data:[
+                                {value:335, name:'教师'},
+                                {value:310, name:'工人'},
+                                {value:274, name:'医生'},
+                                {value:235, name:'学生'},
+                                {value:400, name:'农民'}
+                            ].sort(function (a, b) { return a.value - b.value}),
+                            roseType: 'angle',
+                        }
+                    ]
+                }
+            },
+            chart3:{
+                title:'地图测试',
+                option:{
+                    series: [
+                        {
+                            name: 'iphone3',
+                            type: 'map',
+                            mapType: 'china',
+                            roam: false,
+                            label: {
+                                normal: {
+                                    show: true
+                                },
+                                emphasis: {
+                                    show: true
+                                }
+                            },
+                            data:[
+                                {name: '北京',value: randomData() },
+                                {name: '天津',value: randomData() },
+                                {name: '上海',value: randomData() },
+                                {name: '重庆',value: randomData() },
+                                {name: '河北',value: randomData() },
+                                {name: '河南',value: randomData() },
+                                {name: '云南',value: randomData() },
+                                {name: '辽宁',value: randomData() },
+                                {name: '黑龙江',value: randomData() },
+                                {name: '湖南',value: randomData() },
+                                {name: '安徽',value: randomData() },
+                                {name: '山东',value: randomData() },
+                                {name: '新疆',value: randomData() },
+                                {name: '江苏',value: randomData() },
+                                {name: '浙江',value: randomData() },
+                                {name: '江西',value: randomData() },
+                                {name: '湖北',value: randomData() },
+                                {name: '广西',value: randomData() },
+                                {name: '甘肃',value: randomData() },
+                                {name: '山西',value: randomData() },
+                                {name: '内蒙古',value: randomData() },
+                                {name: '陕西',value: randomData() },
+                                {name: '吉林',value: randomData() },
+                                {name: '福建',value: randomData() },
+                                {name: '贵州',value: randomData() },
+                                {name: '广东',value: randomData() },
+                                {name: '青海',value: randomData() },
+                                {name: '西藏',value: randomData() },
+                                {name: '四川',value: randomData() },
+                                {name: '宁夏',value: randomData() },
+                                {name: '海南',value: randomData() },
+                                {name: '台湾',value: randomData() },
+                                {name: '香港',value: randomData() },
+                                {name: '澳门',value: randomData() }
+                            ]
+                        }
+                    ]
+                }
+            }
+
+        };
 
         $rootScope.data.locations =[
             [],
-            [
-                {
-                    name:'chart1',
-                },
-                {
-                    name:'chart2',
-                }
-            ],
+            [],
+            [],
+            [],
             [],
             [],
             []

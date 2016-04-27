@@ -14,7 +14,8 @@ angular.module('sbAdminApp')
                 animation: true,
                 templateUrl: 'registModalContent.html',
                 controller: 'RegistModalController',
-                backdrop: true
+                backdrop: true,
+                size:'sm'
             });
         }
     })

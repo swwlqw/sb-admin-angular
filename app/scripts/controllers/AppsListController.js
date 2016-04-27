@@ -24,7 +24,7 @@ angular.module('sbAdminApp')
 
         $scope.manager = function (item) {
             $rootScope.currentApp = item;
-            $location.path("home/console")
+            $location.path("home/console/group")
         };
 
         $scope.delete = function (item) {
@@ -50,7 +50,9 @@ angular.module('sbAdminApp')
                 id: index,
                 name: $scope.data.name,
                 description: $scope.data.description,
-                grant: '创建者'
+                grant: '创建者',
+                appKey: $rootScope.generate(10),
+                appSecret: $rootScope.generate(20)
             };
             $rootScope.data.apps.push(app);
             $modalInstance.close($modalInstance.opened);
